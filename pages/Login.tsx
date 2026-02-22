@@ -54,7 +54,7 @@ const Login: React.FC = () => {
           >
             <GraduationCap className="text-bou-300" size={40} />
           </motion.div>
-          <h2 className="text-3xl font-bold text-white mb-2 relative z-10 tracking-tight">Honours Tracker</h2>
+          <h2 className="text-3xl font-bold text-white mb-2 relative z-10 tracking-tight">Honours Class Tracker</h2>
           <p className="text-bou-200 text-sm relative z-10 font-medium tracking-wide uppercase">Bangladesh Open University</p>
         </div>
 
