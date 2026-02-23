@@ -50,9 +50,9 @@ const Login: React.FC = () => {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-            className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-bou-800 mb-4 shadow-lg relative z-10 border-4 border-bou-700/50"
+            className="mb-6 relative z-10 flex justify-center"
           >
-            <GraduationCap className="text-bou-300" size={40} />
+            <img src="https://i.ibb.co.com/Gj1sFwY/Untitled-design-16.png" alt="Logo" className="w-24 h-24 rounded-2xl shadow-2xl" />
           </motion.div>
           <h2 className="text-3xl font-bold text-white mb-2 relative z-10 tracking-tight">Honours Class Tracker</h2>
           <p className="text-bou-200 text-sm relative z-10 font-medium tracking-wide uppercase">Bangladesh Open University</p>

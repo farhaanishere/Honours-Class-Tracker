@@ -144,12 +144,14 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, onEdit }) => {
                             <div key={session.id} className="flex justify-between items-center text-xs bg-white border border-gray-100 p-2 rounded-lg hover:border-bou-200 transition-colors group">
                                 <div className="flex items-center gap-2">
                                     <span className={`w-2 h-2 rounded-full ${session.type === 'Online' ? 'bg-blue-400' : 'bg-green-500'}`}></span>
-                                    <span className="text-gray-600 font-medium">{session.date}</span>
+                                    <span className="text-gray-600 font-medium">
+                                        {new Date(session.date).toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '-')}
+                                    </span>
                                     <span className="text-gray-400 text-[10px] uppercase tracking-wider border border-gray-200 px-1 rounded">{session.type}</span>
                                 </div>
                                 <button 
                                     onClick={() => handleDeleteSession(session.id)} 
-                                    className="text-gray-300 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100"
+                                    className="text-gray-400 hover:text-red-500 transition-colors"
                                 >
                                 <Trash2 size={14} />
                                 </button>

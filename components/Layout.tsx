@@ -35,7 +35,7 @@ const Layout: React.FC = () => {
       {/* Sidebar for Desktop */}
       <aside className="hidden md:flex flex-col w-64 bg-bou-900 text-white shadow-xl fixed h-full z-10">
         <div className="p-6 border-b border-bou-800 flex items-center gap-3">
-          <GraduationCap className="text-bou-300" size={32} />
+          <img src="https://i.ibb.co.com/Gj1sFwY/Untitled-design-16.png" alt="Logo" className="w-8 h-8" />
           <div>
             <h1 className="font-bold text-xl leading-tight">Honours</h1>
             <p className="text-xs text-bou-300 opacity-80">Class Tracker</p>
@@ -87,7 +87,7 @@ const Layout: React.FC = () => {
       {/* Mobile Header */}
       <div className="md:hidden bg-bou-900 text-white p-4 flex justify-between items-center sticky top-0 z-20 shadow-md">
         <div className="flex items-center gap-2">
-          <GraduationCap className="text-bou-300" size={24} />
+          <img src="https://i.ibb.co.com/Gj1sFwY/Untitled-design-16.png" alt="Logo" className="w-6 h-6" />
           <span className="font-bold text-lg">Honours Class Tracker</span>
         </div>
         <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>

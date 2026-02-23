@@ -47,7 +47,7 @@ const Dashboard: React.FC = () => {
   ];
 
   const handleShare = async () => {
-    const date = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    const date = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '-');
     
     let report = `
 🎓 *Honours Class Report*
@@ -107,7 +107,7 @@ App: Honours Class Tracker`;
     if (courseSessions.length > 0) {
       report += `\n\n📝 *Class History:*`;
       courseSessions.forEach((s, idx) => {
-        const date = new Date(s.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+        const date = new Date(s.date).toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '-');
         report += `\n${courseSessions.length - idx}. ${date} (${s.type})`;
         if (s.note) report += ` - ${s.note}`;
       });
@@ -151,7 +151,7 @@ App: Honours Class Tracker`;
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
           <h1 className="text-2xl font-bold text-gray-800">Dashboard</h1>
-          <p className="text-gray-500">Your academic progress overview</p>
+          <p className="text-gray-500">Your class progress overview</p>
         </div>
         <Button onClick={handleShare} variant="secondary" className="gap-2">
           <Share2 size={16} />
@@ -316,7 +316,9 @@ App: Honours Class Tracker`;
                              <div className="flex items-center gap-3">
                                 <span className="text-sm font-mono text-gray-500 w-6">#{getCourseSessions(selectedCourse.id).length - idx}</span>
                                 <div>
-                                   <p className="text-sm font-medium text-gray-800">{new Date(s.date).toLocaleDateString(undefined, { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric'})}</p>
+                                   <p className="text-sm font-medium text-gray-800">
+                                     {new Date(s.date).toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '-')}
+                                   </p>
                                    <p className="text-xs text-gray-400">{s.type}</p>
                                 </div>
                              </div>

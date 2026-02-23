@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'sonner';
 
 const ClassTracker: React.FC = () => {
-  const { semesters, addSemester, addCourse, updateSemesterStatus, updateSemesterName, deleteSemester, updateCourse, deleteCourse } = useData();
+  const { semesters, courses, addSemester, addCourse, updateSemesterStatus, updateSemesterName, deleteSemester, updateCourse, deleteCourse } = useData();
   const [isAddingSemester, setIsAddingSemester] = useState(false);
   const [newSemesterName, setNewSemesterName] = useState(SEMESTER_OPTIONS[0]);
   const [isAddingCourse, setIsAddingCourse] = useState<string | null>(null); // semesterId
@@ -178,7 +178,6 @@ const ClassTracker: React.FC = () => {
 
         <AnimatePresence>
         {activeSemesters.map(semester => {
-          const { courses } = useData();
           const semesterCourses = courses.filter(c => c.semesterId === semester.id);
 
           return (
